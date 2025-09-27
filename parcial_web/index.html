@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlist Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Music Playlist</h1>
+            <p>Gestiona tu colección musical personal</p>
+        </header>
+
+        <main class="main-content">
+            <section class="form-section">
+                <h2 class="section-title">Agregar Canción</h2>
+                <form id="songForm" class="form-grid">
+                    <div class="form-group">
+                        <label for="songTitle">Título de la Canción</label>
+                        <input type="text" id="songTitle" placeholder="Ingresa el título" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="artist">Artista</label>
+                            <input type="text" id="artist" placeholder="Nombre del artista" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="album">Álbum</label>
+                            <input type="text" id="album" placeholder="Nombre del álbum">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="genre">Género</label>
+                            <select id="genre" required>
+                                <option value="">Seleccionar género</option>
+                                <option value="Pop">Pop</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Hip Hop">Hip Hop</option>
+                                <option value="Electronic">Electronic</option>
+                                <option value="Jazz">Jazz</option>
+                                <option value="Classical">Classical</option>
+                                <option value="R&B">R&B</option>
+                                <option value="Country">Country</option>
+                                <option value="Reggae">Reggae</option>
+                                <option value="Alternative">Alternative</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duración</label>
+                            <input type="text" id="duration" placeholder="3:45" pattern="[0-9]+:[0-5][0-9]">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="url" id="url" placeholder="https://...">
+                        </div>
+                        <div class="form-group">
+                            <label for="rating">Calificación</label>
+                            <select id="rating">
+                                <option value="1">⭐</option>
+                                <option value="2">⭐⭐</option>
+                                <option value="3">⭐⭐⭐</option>
+                                <option value="4">⭐⭐⭐⭐</option>
+                                <option value="5" selected>⭐⭐⭐⭐⭐</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <button type="submit" class="btn" id="submitBtn">
+                            <span>➕</span> Agregar Canción
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+        <section class="playlist-section">
+            <div class="playlist-header">
+                <h2 class="section-title">Mi Playlist</h2>
+                <div class="playlist-controls">
+                    <input type="text" id="searchInput" placeholder="Buscar por título, artista o género..." class="search-input">
+                    <button id="exportBtn" class="btn">📥 Exportar JSON</button>
+                </div>
+                <div class="playlist-stats">
+                    <div class="stat">
+                        <span>🎵</span>
+                        <span id="totalSongs">0 canciones</span>
+                    </div>
+                    <div class="stat">
+                        <span>⏱️</span>
+                        <span id="totalDuration">0:00</span>
+                    </div>
+                    <div id="chartContainer">
+                        <canvas id="genreChart" width="200" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playlist-container" id="playlistContainer">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🎼</div>
+                    <h3>Tu playlist está vacía</h3>
+                    <p>Agrega tu primera canción para comenzar</p>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

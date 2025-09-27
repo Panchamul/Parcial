@@ -1,0 +1,24 @@
+[
+  {
+    "title": "wfw",
+    "artist": "sfsdf",
+    "album": "sdfdsf",
+    "genre": "Hip Hop",
+    "duration": "3:45",
+    "url": "https://www.youtube.com/watch?v=xlyrt5eAtKI&list=RDxlyrt5eAtKI&start_radio=1",
+    "rating": 5,
+    "id": 1758897159357,
+    "createdAt": "2025-09-26T14:32:39.357Z"
+  },
+  {
+    "title": "Red Velvet 레드벨벳 'Cosmic' MV",
+    "artist": "Red Velvet",
+    "album": "Red Velvet",
+    "genre": "Pop",
+    "duration": "3:49",
+    "url": "https://www.youtube.com/watch?v=FyG21rXCxlY&list=RDxlyrt5eAtKI&index=4",
+    "rating": 5,
+    "id": 1758897769995,
+    "createdAt": "2025-09-26T14:42:49.995Z"
+  }
+]
